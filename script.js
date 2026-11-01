@@ -529,7 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
    ===================================================================== */
 const IMPACT_STATS = [
   {
-    src: "../../Images/sponsor-a-child.jpg",
+    src: "Images/sponsor-a-child.jpg",
     alt: "Sponsor A Child",
     icon: "fa-child-reaching",
     heading: "Sponsor A Child",
@@ -537,7 +537,7 @@ const IMPACT_STATS = [
     label: "Students Sponsored",
   },
   {
-    src: "../../Images/Screenshot 2026-09-19 010357.png",
+    src: "Images/Screenshot 2026-09-19 010357.png",
     alt: "Rashan Drives",
     icon: "fa-bowl-food",
     heading: "Rashan Drives",
@@ -545,7 +545,7 @@ const IMPACT_STATS = [
     label: "Rashan Bags Donated",
   },
   {
-    src: "../../Images/Screenshot 2026-09-19 005010.png",
+    src: "Images/Screenshot 2026-09-19 005010.png",
     alt: "Masjid Madaris",
     icon: "fa-mosque",
     heading: "Khidmat\nMasjid-o-Madaris",
@@ -553,7 +553,7 @@ const IMPACT_STATS = [
     label: "Quran Pak Donated",
   },
   {
-    src: "../../Images/Screenshot 2026-09-19 010622.png",
+    src: "Images/Screenshot 2026-09-19 010622.png",
     alt: "Rozgar Setup",
     icon: "fa-briefcase",
     heading: "Rozgar Setup",
@@ -561,7 +561,7 @@ const IMPACT_STATS = [
     label: "Rozgar Opportunities Created",
   },
   {
-    src: "../../Images/WhatsApp Image 2026-09-19 at 1.17.22 AM.jpeg",
+    src: "Images/WhatsApp Image 2026-09-19 at 1.17.22 AM.jpeg",
     alt: "Medical Aid",
     icon: "fa-kit-medical",
     heading: "Medical Aid",
@@ -569,7 +569,7 @@ const IMPACT_STATS = [
     label: "Medical Cases Solved",
   },
   {
-    src: "../../Images/Screenshot 2026-09-19 013014.png",
+    src: "Images/Screenshot 2026-09-19 013014.png",
     alt: "Beat The Heat",
     icon: "fa-sun",
     heading: "Beat The Heat",
@@ -577,7 +577,7 @@ const IMPACT_STATS = [
     label: "Coolers Arranged",
   },
   {
-    src: "../../Images/plantation003.jpeg",
+    src: "Images/plantation003.jpeg",
     alt: "Plantation Drive",
     icon: "fa-seedling",
     heading: "Plantation Drive",
@@ -585,7 +585,7 @@ const IMPACT_STATS = [
     label: "Plants Planted",
   },
   {
-    src: "../../Images/C-S-R.jpg",
+    src: "Images/C-S-R.jpg",
     alt: "Corporate Social Responsibility",
     icon: "fa-building",
     heading: "Corporate Social\nResponsibility",
