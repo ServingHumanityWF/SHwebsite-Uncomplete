@@ -1085,3 +1085,101 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+/* ==========================================================================
+   PROJECT PAGES LOCK
+   --------------------------------------------------------------------------
+   Jab tak Core / Seasonal project pages par kaam chal raha hai, in ke links
+   click karne par page khulne ke bajaye "Under Maintenance" popup dikhega.
+
+   Pages dobara kholne ke liye sirf neeche wali line ko  false  kar den.
+   ========================================================================== */
+const PROJECTS_LOCKED = true;
+
+(function () {
+  if (!PROJECTS_LOCKED) return;
+
+  // Jin links mein ye folders aayen ge wo lock ho jayen ge
+  const LOCKED_PATHS = ["projects/coreProjects/", "projects/seasonalProjects/"];
+
+  function isLockedLink(anchor) {
+    if (!anchor) return false;
+    const href = (anchor.getAttribute("href") || "").replace(/\\/g, "/");
+    return LOCKED_PATHS.some(function (path) {
+      return href.indexOf(path) !== -1;
+    });
+  }
+
+  // Popup ko ek dafa page mein add karo
+  function buildModal() {
+    const modal = document.createElement("div");
+    modal.className = "lock-modal";
+    modal.id = "lock-modal";
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML =
+      '<div class="lock-backdrop" data-lock-close></div>' +
+      '<div class="lock-dialog" role="dialog" aria-modal="true" aria-labelledby="lock-title">' +
+      '<button type="button" class="lock-close" data-lock-close aria-label="Close">' +
+      '<i class="fa-solid fa-xmark"></i></button>' +
+      '<div class="lock-icon"><i class="fa-solid fa-lock"></i></div>' +
+      '<span class="lock-eyebrow">UNDER MAINTENANCE</span>' +
+      '<h2 id="lock-title">Page Temporarily <span>Locked</span></h2>' +
+      '<p>We are currently working on our project pages to bring you a better ' +
+      "experience. This page will be available again very soon.</p>" +
+      '<button type="button" class="lock-ok" data-lock-close>Got it</button>' +
+      "</div>";
+    document.body.appendChild(modal);
+    return modal;
+  }
+
+  let modal = null;
+
+  function openLockModal() {
+    if (!modal) modal = buildModal();
+    // class add karne se pehle ek frame ruko taake animation chale
+    requestAnimationFrame(function () {
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+    });
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLockModal() {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  // Capture phase: baqi sab click handlers se pehle chalta hai
+  function blockClick(event) {
+    const anchor = event.target.closest && event.target.closest("a");
+
+    if (anchor && isLockedLink(anchor)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openLockModal();
+      return;
+    }
+
+    if (event.target.closest && event.target.closest("[data-lock-close]")) {
+      closeLockModal();
+    }
+  }
+
+  document.addEventListener("click", blockClick, true);
+  // Middle-click (naye tab mein kholna) bhi block
+  document.addEventListener("auxclick", function (event) {
+    const anchor = event.target.closest && event.target.closest("a");
+    if (anchor && isLockedLink(anchor)) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openLockModal();
+    }
+  }, true);
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeLockModal();
+  });
+})();

@@ -26,6 +26,21 @@
       href="../../../Images/Logos/shLogo.png"
       type="image/x-icon"
     />
+    <!-- Ye snippet SIRF project pages (core + seasonal) ke <head> mein paste karein.
+     index.html ya About/Mission/Contact pages mein NA lagayen.
+     Pages dobara kholne ke liye ye poora <script> hata den. -->
+    <script>
+      (function () {
+        var path = location.pathname;
+        var i = path.indexOf("/projects/");
+
+        // Agar URL mein /projects/ nahi hai to ye project page nahi hai: kuch na karo.
+        if (i === -1) return;
+
+        // /projects/ se pehle wala hissa = site ka root (repo name ke sath bhi sahi chalta hai)
+        location.replace(path.slice(0, i + 1));
+      })();
+    </script>
   </head>
   <body>
     <!-- =====================================================
