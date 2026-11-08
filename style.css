@@ -707,7 +707,7 @@ img {
   width: 100%;
   margin: 0 0 22px;
   color: #ffffff;
-  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-size: clamp(2.6rem, 5vw, 5rem);
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: -2px;
@@ -4003,7 +4003,7 @@ body {
 /* 1. Design tokens: one spacing scale for every section */
 
 :root {
-  --section-pad-y: clamp(56px, 7vw, 88px);
+  --section-pad-y: clamp(30px, 4vw, 88px);
   --section-pad-x: clamp(16px, 5vw, 75px);
   --content-max: 1300px;
   --gap-sm: clamp(8px, 1vw, 12px);
@@ -4062,7 +4062,7 @@ html {
 /* 7. Typography that scales smoothly between phones and desktops */
 
 .hero-heading {
-  font-size: clamp(1.85rem, 1.2rem + 3.2vw, 4rem);
+  font-size: clamp(1.85rem, 1rem + 3.2vw, 4rem);
 }
 
 .hero-description {
@@ -5435,14 +5435,6 @@ body {
     font-size: 14px;
     padding: 7px 12px;
   }
-  .typing-content {
-    height: 6vh;
-    padding: 0 10px;
-    top: 0;
-  }
-  .typing-content h1 {
-    font-size: 0.9rem;
-  }
   .static,
   .text {
     font-size: 0.9rem;
@@ -5647,6 +5639,14 @@ body {
     text-align: center;
     font-size: clamp(14px, 4vw, 18px);
   }
+  /* .typing-content {
+    height: 6vh;
+    padding: 0 10px;
+    top: 0;
+  }
+  .typing-content h1 {
+    font-size: 0.9rem;
+  } */
   .section-container {
     padding: 42px 5%;
   }

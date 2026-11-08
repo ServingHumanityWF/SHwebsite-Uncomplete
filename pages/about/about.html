@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06477f" />
 
     <title>About us | Serving Humanity Welfare Foundation - (REGD).</title>
 
@@ -15,13 +16,18 @@
       rel="stylesheet"
     />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
 
-    <!-- Main CSS -->
+    <!-- Page CSS -->
     <link rel="stylesheet" href="about.css" />
 
     <!-- Favicon -->
@@ -30,14 +36,14 @@
 
   <body>
     <!-- =====================================================
-       HEADER
-  ====================================================== -->
+       HEADER (light)
+    ====================================================== -->
 
     <header id="header-container">
       <div class="header-content">
         <!-- Logo -->
         <div class="welfareLogo">
-          <a href="../../pages/mainPage/index.html" class="logo-link">
+          <a href="../../index.html" class="logo-link">
             <img
               src="../../Images/Logos/welfareLogo.png"
               alt="Serving Humanity Welfare Foundation"
@@ -91,67 +97,77 @@
       </div>
     </header>
 
-    <!-- =====================================================
-       ABOUT US SECTION
-  ====================================================== -->
-
     <main>
-      <section id="about" class="about-section">
-        <!-- Background Overlay -->
+      <!-- =====================================================
+         1) ABOUT HERO  -  DARK
+      ====================================================== -->
+
+      <section id="about" class="about-hero">
         <div class="about-overlay"></div>
 
-        <!-- About Content -->
-        <div class="about-content">
+        <div class="about-inner">
           <div class="back-home-wrap">
             <a href="../../pages/mainPage/index.html" class="back-home-btn">
               <i class="fa-solid fa-arrow-left"></i>
               <span>Back to Home</span>
             </a>
           </div>
-          <!-- Section Title -->
-          <p class="section-tag">ABOUT US</p>
 
-          <!-- Main Heading -->
-          <h1>
-            Serving Humanity,
-            <br />
+          <div class="about-content">
+            <p class="section-tag">ABOUT US</p>
 
-            <span class="spreadSmile"> Spreading Smiles. </span>
-          </h1>
+            <h1>
+              Serving Humanity,
+              <br />
+              <span class="spreadSmile"> Spreading Smiles. </span>
+            </h1>
 
-          <!-- Intro -->
-          <p class="intro">
-            <strong>Serving Humanity Welfare Foundation (REGD.)</strong>
-            is driven by one simple belief: every act of kindness has the power
-            to make a meaningful difference in someone's life.
-          </p>
+            <p class="intro">
+              <strong>Serving Humanity Welfare Foundation (REGD.)</strong>
+              is driven by one simple belief: every act of kindness has the
+              power to make a meaningful difference in someone's life.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <!-- About Work -->
-          <p>
-            Our work is focused on supporting individuals and families in need
-            through practical welfare initiatives that bring care, dignity and
-            hope where it is needed most. From supporting children's futures and
-            providing essential food supplies to medical assistance, livelihood
-            support and community service, we strive to turn compassion into
-            meaningful action.
-          </p>
+      <!-- =====================================================
+         2) OUR STORY  -  LIGHT
+      ====================================================== -->
 
-          <!-- Mission -->
-          <p>
-            Our mission is simple — to bring people together, turn compassion
-            into action and make every good deed count.
-          </p>
+      <section class="about-story" id="our-story">
+        <div class="story-grid">
+          <article class="story-item">
+            <span class="story-icon" aria-hidden="true">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </span>
+            <h2>Our Work</h2>
+            <p>
+              Our work is focused on supporting individuals and families in need
+              through practical welfare initiatives that bring care, dignity and
+              hope where it is needed most. From supporting children's futures
+              and providing essential food supplies to medical assistance,
+              livelihood support and community service, we strive to turn
+              compassion into meaningful action.
+            </p>
+          </article>
 
-          <!-- Journey -->
-          <p>
-            Our journey is built around people helping people — individuals,
-            volunteers, students, communities and partners coming together to
-            create positive change. Every project is an opportunity to serve,
-            every helping hand is valuable, and every good deed can become a
-            reason for someone to hope again.
-          </p>
+          <article class="story-item">
+            <span class="story-icon" aria-hidden="true">
+              <i class="fa-solid fa-people-group"></i>
+            </span>
+            <h2>Our Journey</h2>
+            <p>
+              Our journey is built around people helping people — individuals,
+              volunteers, students, communities and partners coming together to
+              create positive change. Every project is an opportunity to serve,
+              every helping hand is valuable, and every good deed can become a
+              reason for someone to hope again.
+            </p>
+          </article>
+        </div>
 
-          <!-- Hashtag -->
+        <div class="story-hashtag">
           <a href="#" class="hashtag-link">
             <strong class="about-hashtag"> #SIRF<span>AIK</span>NEKI </strong>
           </a>
@@ -159,8 +175,8 @@
       </section>
 
       <!-- =====================================================
-  OUR TEAM - 3D CAROUSEL
-===================================================== -->
+         3) OUR TEAM  -  DARK
+      ====================================================== -->
 
       <section class="sh-team-section" id="our-team">
         <div class="sh-team-container">
@@ -193,102 +209,8 @@
             </button>
 
             <!-- CAROUSEL -->
-            <div class="sh-team-stage" id="sh-team-stage">
-              <!-- MEMBER 1 -->
-              <div class="sh-team-card">
-                <img
-                  src="../../Images/1000049015.png"
-                  alt="M. Umer Khan"
-                  onerror="
-                    this.onerror = null;
-                    this.src = '../../Images/1000049015.png';
-                  "
-                />
-
-                <div class="sh-team-card-overlay"></div>
-
-                <div class="sh-team-card-info">
-                  <h3>M. Umer Khan</h3>
-                  <span>Senior Member</span>
-                </div>
-              </div>
-
-              <!-- MEMBER 2 -->
-              <div class="sh-team-card">
-                <img
-                  src="../../Images/1000049017.png"
-                  alt="Sheeza Fatima"
-                  onerror="
-                    this.onerror = null;
-                    this.src = '../../Images/1000049017.png';
-                  "
-                />
-
-                <div class="sh-team-card-overlay"></div>
-
-                <div class="sh-team-card-info">
-                  <h3>Sheeza Fatima</h3>
-                  <span>Marketing Representative</span>
-                </div>
-              </div>
-
-              <!-- MEMBER 3 -->
-              <div class="sh-team-card">
-                <img
-                  src="../../Images/1000049027.png"
-                  alt="Usman Islam"
-                  onerror="
-                    this.onerror = null;
-                    this.src = '../../Images/1000049027.png';
-                  "
-                />
-
-                <div class="sh-team-card-overlay"></div>
-
-                <div class="sh-team-card-info">
-                  <h3>Usman Islam</h3>
-                  <span>Marketing Representative</span>
-                </div>
-              </div>
-
-              <!-- MEMBER 4 -->
-              <div class="sh-team-card">
-                <img
-                  src="../../Images/1000049023.png"
-                  alt="Usman Islam"
-                  onerror="
-                    this.onerror = null;
-                    this.src = '../../Images/1000049023.png';
-                  "
-                />
-
-                <div class="sh-team-card-overlay"></div>
-
-                <div class="sh-team-card-info">
-                  <h3>Sheraz Khan</h3>
-                  <span>Marketing Manager</span>
-                </div>
-              </div>
-
-              <!-- MEMBER 5 -->
-              <div class="sh-team-card">
-                <img
-                  src="../../Images/1000049021.png"
-                  alt="Usman Islam"
-                  onerror="
-                    this.onerror = null;
-                    this.src = '../../Images/1000049021.png';
-                  "
-                />
-
-                <div class="sh-team-card-overlay"></div>
-
-                <div class="sh-team-card-info">
-                  <h3>Owaiz Khan</h3>
-                  <span>General Secretry</span>
-                </div>
-              </div>
-            </div>
+            <!-- Cards are built by about.js from the TEAM_MEMBERS list -->
+            <div class="sh-team-stage" id="sh-team-stage"></div>
 
             <!-- RIGHT ARROW -->
             <button
@@ -306,9 +228,9 @@
             <span class="sh-team-line"></span>
 
             <div>
-              <strong id="sh-team-active-name"> M. Umer Khan </strong>
+              <strong id="sh-team-active-name"></strong>
 
-              <span id="sh-team-active-role"> Senior Member </span>
+              <span id="sh-team-active-role"></span>
             </div>
 
             <span class="sh-team-line"></span>
@@ -319,11 +241,11 @@
         </div>
       </section>
 
-      <!-- =========================================
-     PEOPLE / PARTNERS SECTION
-========================================= -->
+      <!-- =====================================================
+         4) PROJECTS SLIDER  -  LIGHT
+      ====================================================== -->
 
-      <div class="people-section">
+      <section class="people-section" aria-label="Our projects">
         <div class="people-track" id="peopleTrack">
           <!-- ==============================
          FIRST SET — 12 LOGOS
@@ -435,7 +357,7 @@
          FOR SEAMLESS INFINITE SLIDER
     =============================== -->
 
-          <a href="../../projects/coreProjects/sponsorAChild/achild1.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/coreProjects/sponsorAChild/achild1.html">
             <div class="person">
               <img
                 src="../../Images/Logos/childSlide.png"
@@ -444,19 +366,19 @@
             </div>
           </a>
 
-          <a href="../../projects/coreProjects/rashanDrive/rashan.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/coreProjects/rashanDrive/rashan.html">
             <div class="person">
               <img src="../../Images/Logos/rashanSlide.png" alt="rashanDrive" />
             </div>
           </a>
 
-          <a href="../../projects/coreProjects/rozgarSetup/rozgar.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/coreProjects/rozgarSetup/rozgar.html">
             <div class="person">
               <img src="../../Images/Logos/rozgarSlide.png" alt="rozgarSetup" />
             </div>
           </a>
 
-          <a
+          <a tabindex="-1" aria-hidden="true"
             href="../../projects/coreProjects/khidmatMasjidMadaris/masjid.html"
           >
             <div class="person">
@@ -467,13 +389,13 @@
             </div>
           </a>
 
-          <a href="../../projects/coreProjects/medicalAid/medical.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/coreProjects/medicalAid/medical.html">
             <div class="person">
               <img src="../../Images/Logos/medicalSlide.png" alt="medicalAid" />
             </div>
           </a>
 
-          <a href="../../projects/seasonalProjects/clothingDrive/clothing.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/seasonalProjects/clothingDrive/clothing.html">
             <div class="person">
               <img
                 src="../../Images/Logos/clothingSlide.png"
@@ -482,7 +404,7 @@
             </div>
           </a>
 
-          <a href="../../projects/seasonalProjects/dawat_e_Iftar/iftar.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/seasonalProjects/dawat_e_Iftar/iftar.html">
             <div class="person">
               <img
                 src="../../Images/Logos/iftarSlide.png"
@@ -491,7 +413,7 @@
             </div>
           </a>
 
-          <a
+          <a tabindex="-1" aria-hidden="true"
             href="../../projects/seasonalProjects/beatTheHeat/beattheheat.html"
           >
             <div class="person">
@@ -499,7 +421,7 @@
             </div>
           </a>
 
-          <a href="../../projects/seasonalProjects/waqfQurbani/qurbane.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/seasonalProjects/waqfQurbani/qurbane.html">
             <div class="person">
               <img
                 src="../../Images/Logos/qurbaniSlide.png"
@@ -508,7 +430,7 @@
             </div>
           </a>
 
-          <a
+          <a tabindex="-1" aria-hidden="true"
             href="../../projects/seasonalProjects/plantationDrive/Plantation.html"
           >
             <div class="person">
@@ -519,7 +441,7 @@
             </div>
           </a>
 
-          <a
+          <a tabindex="-1" aria-hidden="true"
             href="../../projects/seasonalProjects/corporateSocialResponsibility/(CSR).html"
           >
             <div class="person">
@@ -530,18 +452,18 @@
             </div>
           </a>
 
-          <a href="../../projects/seasonalProjects/floodRelief/flooddrive.html">
+          <a tabindex="-1" aria-hidden="true" href="../../projects/seasonalProjects/floodRelief/flooddrive.html">
             <div class="person">
               <img src="../../Images/Logos/floodSlide.png" alt="floodRelief" />
             </div>
           </a>
         </div>
-      </div>
+      </section>
     </main>
 
     <!-- =====================================================
-       FOOTER
-  ====================================================== -->
+       5) FOOTER  -  DARK
+    ====================================================== -->
 
     <footer class="footer">
       <div class="footer-container">
@@ -649,7 +571,7 @@
 
           <ul>
             <li>
-              <a href="../../projects/coreProjects/sponsorAChild/achild.html">
+              <a href="../../projects/coreProjects/sponsorAChild/achild1.html">
                 Sponsor a Child
               </a>
             </li>
@@ -667,16 +589,16 @@
             </li>
 
             <li>
-              <a href="../../projects/coreProjects/medicalAid/medical.html">
-                Medical Aid
-              </a>
-            </li>
-
-            <li>
               <a
                 href="../../projects/coreProjects/khidmatMasjidMadaris/masjid.html"
               >
                 Khidmat Masjid-O-Madaris
+              </a>
+            </li>
+
+            <li>
+              <a href="../../projects/coreProjects/medicalAid/medical.html">
+                Medical Aid
               </a>
             </li>
           </ul>
@@ -687,11 +609,11 @@
       ================================ -->
 
         <div class="footer-col">
-          <h3>Contact Us</h3>
+          <h3>Connect Us</h3>
 
           <p>
             <i class="fas fa-map-marker-alt"></i>
-            1-E 5/9 Nazimabad No.1, Karachi
+            1-E 5/9 Nazimabad No.1, Karachi, Sindh, Pakistan.
           </p>
 
           <p>
@@ -731,8 +653,8 @@
     </a>
 
     <!-- =====================================================
-       DONATE NOW POPUP BUTTON
-  ====================================================== -->
+       DONATE NOW POPUP  (same popup as the main page)
+    ====================================================== -->
 
     <div class="donation-modal" id="donation-modal" aria-hidden="true">
       <div class="donation-backdrop" data-donation-close></div>
@@ -782,7 +704,9 @@
                   <h3>MCB Bank</h3>
                   <p class="bank-subtitle">MCB Bank Limited</p>
                 </div>
-                <span class="method-badge">Direct</span>
+                <span class="method-badge unrestricted-badge"
+                  >Unrestricted (Sadqat/Nafila)</span
+                >
               </div>
 
               <div class="detail-row">
@@ -831,7 +755,7 @@
               <img
                 src="../../Images/Logos/ublLogo.jpg"
                 alt="United Bank"
-                class="mcb-logo"
+                class="ubl-logo"
               />
             </div>
             <div class="method-content">
@@ -840,12 +764,16 @@
                   <h3>United Bank</h3>
                   <p class="bank-subtitle">United Bank Limited</p>
                 </div>
-                <span class="method-badge">Direct</span>
+                <span class="method-badge restricted-badge"
+                  >Restricted (Zakat/Wajiba)</span
+                >
               </div>
 
               <div class="detail-row">
                 <span>Account Title</span>
-                <strong>SERVING HUMANITY WELFARE FOUNDATION</strong>
+                <strong
+                  >SERVING HUMANITY WELFARE FOUNDATION (only Zakat)</strong
+                >
                 <button
                   type="button"
                   class="copy-btn"
@@ -862,7 +790,7 @@
                 <button
                   type="button"
                   class="copy-btn"
-                  data-copy="1688813911006862"
+                  data-copy="0071401588882"
                   aria-label="Copy account or IBAN"
                 >
                   <i class="fa-regular fa-copy"></i>
@@ -875,7 +803,7 @@
                 <button
                   type="button"
                   class="copy-btn"
-                  data-copy="PK68MUCB1688813911006862"
+                  data-copy="PK30UNIL0109000401588882"
                   aria-label="Copy account or IBAN"
                 >
                   <i class="fa-regular fa-copy"></i>
@@ -884,81 +812,6 @@
             </div>
           </article>
 
-          <!-- <article class="donation-method">
-            <div class="method-icon easypaisa-icon">
-              <i class="fa-solid fa-mobile-screen-button"></i>
-            </div>
-            <div class="method-content">
-              <div class="method-heading">
-                <h3>EasyPaisa</h3>
-                <span class="method-badge">Mobile</span>
-              </div>
-
-              <div class="detail-row">
-                <span>Account Name</span>
-                <strong>SERVING HUMANITY WELFARE FOUNDATION</strong>
-                <button
-                  type="button"
-                  class="copy-btn"
-                  data-copy="SERVING HUMANITY WELFARE FOUNDATION"
-                  aria-label="Copy EasyPaisa account name"
-                >
-                  <i class="fa-regular fa-copy"></i>
-                </button>
-              </div>
-
-              <div class="detail-row">
-                <span>Mobile / Account</span>
-                <strong>ADD EASYPAISA NUMBER</strong>
-                <button
-                  type="button"
-                  class="copy-btn"
-                  data-copy="ADD EASYPAISA NUMBER"
-                  aria-label="Copy EasyPaisa number"
-                >
-                  <i class="fa-regular fa-copy"></i>
-                </button>
-              </div>
-            </div>
-          </article> -->
-
-          <!-- <article class="donation-method">
-            <div class="method-icon jazzcash-icon">
-              <i class="fa-solid fa-wallet"></i>
-            </div>
-            <div class="method-content">
-              <div class="method-heading">
-                <h3>JazzCash</h3>
-                <span class="method-badge">Mobile</span>
-              </div>
-
-              <div class="detail-row">
-                <span>Account Name</span>
-                <strong>SERVING HUMANITY WELFARE FOUNDATION</strong>
-                <button
-                  type="button"
-                  class="copy-btn"
-                  data-copy="SERVING HUMANITY WELFARE FOUNDATION"
-                  aria-label="Copy JazzCash account name"
-                >
-                  <i class="fa-regular fa-copy"></i>
-                </button>
-              </div>
-
-              <div class="detail-row">
-                <span>Mobile / Account</span>
-                <strong>ADD JAZZCASH NUMBER</strong>
-                <button
-                  type="button"
-                  class="copy-btn"
-                  data-copy="ADD JAZZCASH NUMBER"
-                  aria-label="Copy JazzCash number"
-                >
-                  <i class="fa-regular fa-copy"></i>
-                </button>
-              </div>
-            </div>
-          </article> -->
         </div>
 
         <div class="donation-contact">
@@ -995,528 +848,397 @@
     </div>
 
     <!-- =====================================================
+       BE A SPONSOR POPUP  (same popup + form as the main page)
+    ====================================================== -->
+
+    <div class="sponsor-modal" id="sponsorModal" aria-hidden="true">
+      <div class="sponsor-modal-overlay"></div>
+
+      <div
+        class="sponsor-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sponsorModalTitle"
+      >
+        
+        <button
+          type="button"
+          class="sponsor-close"
+          id="sponsorClose"
+          aria-label="Close sponsor popup"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="sponsor-modal-header">
+          <div class="sponsor-header-icon">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+
+          <div class="sponsor-top">
+            <span class="sponsor-kicker"> PARTNERSHIP OPPORTUNITY </span>
+
+            <h2 id="sponsorModalTitle">Be a Sponsor</h2>
+
+            <p>
+              Partner with us to create meaningful social impact through our
+              humanitarian projects and community initiatives.
+            </p>
+          </div>
+        </div>
+
+        <div class="sponsor-modal-body">
+
+          <section class="sponsor-block">
+            <div class="sponsor-block-heading">
+              <span class="sponsor-block-number"> 01 </span>
+
+              <div>
+                <span class="sponsor-mini-label">
+                  SPONSORSHIP OPPORTUNITIES
+                </span>
+
+                <h3>What Can You Sponsor?</h3>
+              </div>
+            </div>
+
+            <div class="sponsor-opportunity-grid">
+              <div class="sponsor-opportunity">
+                <div class="sponsor-opportunity-icon">
+                  <i class="fa-solid fa-child-reaching"></i>
+                </div>
+
+                <div>
+                  <strong>Sponsor A Child</strong>
+                  <span> Support education and a brighter future. </span>
+                </div>
+              </div>
+
+              <div class="sponsor-opportunity">
+                <div class="sponsor-opportunity-icon">
+                  <i class="fa-solid fa-bowl-food"></i>
+                </div>
+
+                <div>
+                  <strong>Rashan Drive</strong>
+                  <span> Support essential food supplies for families. </span>
+                </div>
+              </div>
+
+              <div class="sponsor-opportunity">
+                <div class="sponsor-opportunity-icon">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+
+                <div>
+                  <strong>Rozgar Setup</strong>
+                  <span> Help create sustainable earning opportunities. </span>
+                </div>
+              </div>
+
+              <div class="sponsor-opportunity">
+                <div class="sponsor-opportunity-icon">
+                  <i class="fa-solid fa-kit-medical"></i>
+                </div>
+
+                <div>
+                  <strong>Medical Aid</strong>
+                  <span> Support people facing essential medical needs. </span>
+                </div>
+              </div>
+
+              <div class="sponsor-opportunity">
+                <div class="sponsor-opportunity-icon">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <div>
+                  <strong>Plantation Drive</strong>
+                  <span>
+                    Support environmental and community initiatives.
+                  </span>
+                </div>
+              </div>
+
+              <div class="sponsor-opportunity">
+                <div class="sponsor-opportunity-icon">
+                  <i class="fa-solid fa-calendar-days"></i>
+                </div>
+
+                <div>
+                  <strong>Seasonal Drives</strong>
+                  <span>
+                    Support Qurbani, Iftaar, clothing and relief drives.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="sponsor-block sponsor-benefits-block">
+            <div class="sponsor-block-heading">
+              <span class="sponsor-block-number"> 02 </span>
+
+              <div>
+                <span class="sponsor-mini-label"> PARTNERSHIP VALUE </span>
+
+                <h3>Benefits For Your Company</h3>
+              </div>
+            </div>
+
+            <div class="sponsor-benefits-grid">
+              <div class="sponsor-benefit">
+                <div class="sponsor-benefit-icon">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </div>
+
+                <div>
+                  <strong>Brand Visibility</strong>
+                  <p>
+                    Recognition across relevant project and campaign
+                    communications.
+                  </p>
+                </div>
+              </div>
+
+              <div class="sponsor-benefit">
+                <div class="sponsor-benefit-icon">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+
+                <div>
+                  <strong>Social Media Support</strong>
+                  <p>
+                    Partnership visibility through social media campaign
+                    activity.
+                  </p>
+                </div>
+              </div>
+
+              <div class="sponsor-benefit">
+                <div class="sponsor-benefit-icon">
+                  <i class="fa-solid fa-road"></i>
+                </div>
+
+                <div>
+                  <strong>On-Ground Visibility</strong>
+                  <p>
+                    Brand presence can be incorporated into relevant field
+                    activities.
+                  </p>
+                </div>
+              </div>
+
+              <div class="sponsor-benefit">
+                <div class="sponsor-benefit-icon">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                  <strong>Direct Consumer Reach</strong>
+                  <p>
+                    Connect your brand with communities reached through our
+                    initiatives.
+                  </p>
+                </div>
+              </div>
+
+              <div class="sponsor-benefit">
+                <div class="sponsor-benefit-icon">
+                  <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <div>
+                  <strong>Partnership Network</strong>
+                  <p>
+                    Explore collaboration opportunities through professional
+                    networks.
+                  </p>
+                </div>
+              </div>
+
+              <div class="sponsor-benefit">
+                <div class="sponsor-benefit-icon">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div>
+                  <strong>CSR Partnership</strong>
+                  <p>
+                    Build a meaningful association around community-focused
+                    initiatives.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="sponsor-approach">
+            <div class="sponsor-approach-icon">
+              <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+              <strong> Looking for a customized sponsorship? </strong>
+
+              <p>
+                Sponsorship can be discussed according to your company, budget,
+                campaign goals, and the project you want to support.
+              </p>
+            </div>
+          </section>
+
+          <section class="sponsor-block sponsor-join" id="sponsorJoin">
+            <div class="sponsor-block-heading">
+              <span class="sponsor-block-number"> 02 </span>
+
+              <div>
+                <span class="sponsor-mini-label">JOIN OUR MISSION</span>
+
+                <h3>Become a Partner</h3>
+              </div>
+            </div>
+
+            <p class="sponsor-join-intro">
+              Fill in this form and our team will contact you to discuss how you
+              can take part in our projects.
+            </p>
+
+            <form class="sponsor-form" id="sponsorJoinForm" novalidate>
+              <div class="sponsor-field">
+                <label for="partnerName">Full name <span class="req">*</span></label>
+                <input
+                  type="text"
+                  id="partnerName"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Your full name"
+                  required
+                />
+              </div>
+
+              <div class="sponsor-field">
+                <label for="partnerPhone">Phone / WhatsApp <span class="req">*</span></label>
+                <input
+                  type="tel"
+                  id="partnerPhone"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="e.g. 0300 1234567"
+                  required
+                />
+              </div>
+
+              <div class="sponsor-field">
+                <label for="partnerEmail">Email</label>
+                <input
+                  type="email"
+                  id="partnerEmail"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                />
+              </div>
+
+              <div class="sponsor-field">
+                <label for="partnerCity">City</label>
+                <input
+                  type="text"
+                  id="partnerCity"
+                  name="city"
+                  autocomplete="address-level2"
+                  placeholder="Your city"
+                />
+              </div>
+
+              <div class="sponsor-field">
+                <label for="partnerInvolvement">How would you like to join? <span class="req">*</span></label>
+                <select id="partnerInvolvement" name="involvement" required>
+                  <option value="">Select an option</option>
+                  <option>Sponsor a child</option>
+                  <option>Sponsor a project</option>
+                  <option>Volunteer my time</option>
+                  <option>Corporate partnership</option>
+                  <option>Donate goods (in-kind)</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="sponsor-field">
+                <label for="partnerProject">Project you are interested in</label>
+                <select id="partnerProject" name="project">
+                  <option value="">Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="sponsor-field">
+                <label for="partnerCommitment">Type of support</label>
+                <select id="partnerCommitment" name="commitment">
+                  <option value="">Select an option</option>
+                  <option>One-time contribution</option>
+                  <option>Monthly sponsorship</option>
+                  <option>Yearly sponsorship</option>
+                  <option>Volunteer hours</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="sponsor-field sponsor-field-full">
+                <label for="partnerOrganization">Organization / company (optional)</label>
+                <input
+                  type="text"
+                  id="partnerOrganization"
+                  name="organization"
+                  autocomplete="organization"
+                  placeholder="If you are representing a group"
+                />
+              </div>
+
+              <div class="sponsor-field sponsor-field-full">
+                <label for="partnerMessage">Message (optional)</label>
+                <textarea
+                  id="partnerMessage"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell us how you would like to help"
+                ></textarea>
+              </div>
+
+              <p class="sponsor-form-status" id="sponsorFormStatus" role="status" aria-live="polite"></p>
+
+              <button type="submit" class="sponsor-submit-btn" id="sponsorSubmitBtn">
+                Submit Partnership Request
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </section>
+
+          <div class="sponsor-modal-cta">
+            <div class="sponsor-cta-text">
+              <span> LET'S CREATE IMPACT TOGETHER </span>
+
+              <h3>
+                Become a
+                <strong>Serving Humanity Partner.</strong>
+              </h3>
+            </div>
+
+            <a
+              href="mailto:servinghumanitysh1@gmail.com?subject=Sponsorship%20Partnership%20Inquiry"
+              class="sponsor-contact-btn"
+            >
+              Discuss Sponsorship
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =====================================================
        JAVASCRIPT
-  ====================================================== -->
+    ====================================================== -->
 
-    <script>
-      /* ================================
-      TYPING ANIMATION
-      ================================= */
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const words = [
-          "Sponsor a Child",
-          "Rashan Drive",
-          "Rozgar Setup",
-          "Medical Aid",
-          "Khidmat Masjid-O-Madaris",
-          "Clothing Drive",
-          "Dawat-e-Iftaar",
-          "Beat the Heat",
-          "Waqf Qurbani",
-          "Plantation Drive",
-          "Corporate Social Responsibility",
-          "Flood Relief Drive",
-        ];
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        const textElement = document.querySelector(".text");
-
-        function typeEffect() {
-          const currentWord = words[wordIndex];
-
-          if (isDeleting) {
-            charIndex--;
-          } else {
-            charIndex++;
-          }
-
-          textElement.innerHTML =
-            currentWord.substring(0, charIndex) +
-            '<span class="cursor"></span>';
-
-          let speed = isDeleting ? 70 : 120;
-
-          if (!isDeleting && charIndex === currentWord.length) {
-            speed = 1000;
-            isDeleting = true;
-          }
-
-          if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex++;
-
-            if (wordIndex === words.length) {
-              wordIndex = 0;
-            }
-
-            speed = 300;
-          }
-
-          setTimeout(typeEffect, speed);
-        }
-
-        typeEffect();
-
-        /* ================================
-       FOOTER SCROLL ANIMATION
-    ================================= */
-
-        const animatedElements = document.querySelectorAll(
-          ".footer .footer-col, .footer .footer-bottom p",
-        );
-
-        const observer = new IntersectionObserver(
-          (entries, observer) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("animate");
-
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          {
-            threshold: 0.15,
-          },
-        );
-
-        animatedElements.forEach((element) => {
-          observer.observe(element);
-        });
-      });
-
-      /* =====================================================
-      ELEMENTS
-      ===================================================== */
-      document.addEventListener("DOMContentLoaded", function () {
-        const stage = document.getElementById("sh-team-stage");
-
-        const cards = Array.from(document.querySelectorAll(".sh-team-card"));
-
-        const prevBtn = document.getElementById("sh-team-prev");
-
-        const nextBtn = document.getElementById("sh-team-next");
-
-        const dotsContainer = document.getElementById("sh-team-dots");
-
-        const activeName = document.getElementById("sh-team-active-name");
-
-        const activeRole = document.getElementById("sh-team-active-role");
-
-        /* =====================================================
-     CHECK
-  ===================================================== */
-
-        if (!stage || !cards.length || !prevBtn || !nextBtn) {
-          console.log("Team carousel elements missing.");
-          return;
-        }
-
-        let currentIndex = 0;
-        let isAnimating = false;
-        let autoPlay;
-
-        /* =====================================================
-     BUILD DOTS AUTOMATICALLY
-  ===================================================== */
-
-        cards.forEach(function (_, index) {
-          const dot = document.createElement("button");
-
-          dot.type = "button";
-
-          dot.className = "sh-team-dot";
-
-          dot.setAttribute("aria-label", "Show team member " + (index + 1));
-
-          dot.addEventListener("click", function () {
-            goTo(index);
-          });
-
-          dotsContainer.appendChild(dot);
-        });
-
-        const dots = Array.from(dotsContainer.querySelectorAll(".sh-team-dot"));
-
-        /* =====================================================
-     GET RELATIVE POSITION
-     
-     -2 = second left
-     -1 = first left
-      0 = center
-     +1 = first right
-     +2 = second right
-  ===================================================== */
-
-        function getRelativePosition(index) {
-          let difference = index - currentIndex;
-
-          const total = cards.length;
-
-          /*
-      Special handling for circular carousel
-    */
-
-          if (difference > total / 2) {
-            difference -= total;
-          }
-
-          if (difference < -total / 2) {
-            difference += total;
-          }
-
-          return difference;
-        }
-
-        /* =====================================================
-     RENDER CARDS
-  ===================================================== */
-
-        function renderCards() {
-          cards.forEach(function (card, index) {
-            const position = getRelativePosition(index);
-
-            /* Remove previous positions */
-
-            card.classList.remove(
-              "sh-center",
-              "sh-left",
-              "sh-right",
-              "sh-left-two",
-              "sh-right-two",
-              "sh-hidden",
-            );
-
-            /* =================================================
-         5 VISIBLE POSITIONS
-      ================================================= */
-
-            if (position === 0) {
-              card.classList.add("sh-center");
-            } else if (position === -1) {
-              card.classList.add("sh-left");
-            } else if (position === 1) {
-              card.classList.add("sh-right");
-            } else if (position === -2) {
-              card.classList.add("sh-left-two");
-            } else if (position === 2) {
-              card.classList.add("sh-right-two");
-            } else {
-              card.classList.add("sh-hidden");
-            }
-          });
-
-          /* =================================================
-       ACTIVE MEMBER INFORMATION
-    ================================================= */
-
-          const activeCard = cards[currentIndex];
-
-          if (activeCard) {
-            const heading = activeCard.querySelector(".sh-team-card-info h3");
-
-            const role = activeCard.querySelector(".sh-team-card-info span");
-
-            if (heading && activeName) {
-              activeName.textContent = heading.textContent.trim();
-            }
-
-            if (role && activeRole) {
-              activeRole.textContent = role.textContent.trim();
-            }
-          }
-
-          /* =================================================
-       UPDATE DOTS
-    ================================================= */
-
-          dots.forEach(function (dot, index) {
-            dot.classList.toggle("active", index === currentIndex);
-          });
-        }
-
-        /* =====================================================
-     GO TO MEMBER
-  ===================================================== */
-
-        function goTo(index) {
-          if (isAnimating || cards.length < 2) {
-            return;
-          }
-
-          isAnimating = true;
-
-          /*
-      Circular index
-    */
-
-          currentIndex = (index + cards.length) % cards.length;
-
-          renderCards();
-
-          setTimeout(function () {
-            isAnimating = false;
-          }, 650);
-
-          restartAutoPlay();
-        }
-
-        /* =====================================================
-     PREVIOUS BUTTON
-  ===================================================== */
-
-        prevBtn.addEventListener("click", function () {
-          goTo(currentIndex - 1);
-        });
-
-        /* =====================================================
-     NEXT BUTTON
-  ===================================================== */
-
-        nextBtn.addEventListener("click", function () {
-          goTo(currentIndex + 1);
-        });
-
-        /* =====================================================
-     KEYBOARD
-  ===================================================== */
-
-        document.addEventListener("keydown", function (event) {
-          const teamSection = document.getElementById("our-team");
-
-          if (!teamSection) {
-            return;
-          }
-
-          const rect = teamSection.getBoundingClientRect();
-
-          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-
-          if (!isVisible) {
-            return;
-          }
-
-          if (event.key === "ArrowLeft") {
-            goTo(currentIndex - 1);
-          }
-
-          if (event.key === "ArrowRight") {
-            goTo(currentIndex + 1);
-          }
-        });
-
-        /* =====================================================
-     AUTO PLAY
-  ===================================================== */
-
-        function startAutoPlay() {
-          if (cards.length < 2) {
-            return;
-          }
-
-          autoPlay = setInterval(function () {
-            goTo(currentIndex + 1);
-          }, 5000);
-        }
-
-        function restartAutoPlay() {
-          clearInterval(autoPlay);
-
-          startAutoPlay();
-        }
-
-        /* =====================================================
-     TOUCH / SWIPE
-  ===================================================== */
-
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        stage.addEventListener(
-          "touchstart",
-          function (event) {
-            touchStartX = event.changedTouches[0].screenX;
-          },
-          {
-            passive: true,
-          },
-        );
-
-        stage.addEventListener(
-          "touchend",
-          function (event) {
-            touchEndX = event.changedTouches[0].screenX;
-
-            const distance = touchEndX - touchStartX;
-
-            if (Math.abs(distance) < 45) {
-              return;
-            }
-
-            if (distance < 0) {
-              goTo(currentIndex + 1);
-            } else {
-              goTo(currentIndex - 1);
-            }
-          },
-          {
-            passive: true,
-          },
-        );
-
-        /* =====================================================
-     INITIAL LOAD
-  ===================================================== */
-
-        renderCards();
-
-        startAutoPlay();
-      });
-
-      /* =========================================
-       Donate Now Popup
-    ========================================= */
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const donationModal = document.getElementById("donation-modal");
-        const donationDialog = donationModal
-          ? donationModal.querySelector(".donation-dialog")
-          : null;
-        const donationClose = document.getElementById("donation-close");
-        const copyToast = document.getElementById("copy-toast");
-
-        if (!donationModal || !donationDialog) return;
-
-        function openDonationPopup(event) {
-          if (event) {
-            event.preventDefault();
-            event.stopPropagation();
-          }
-
-          donationModal.classList.add("open");
-          donationModal.setAttribute("aria-hidden", "false");
-          document.body.classList.add("donation-lock");
-
-          setTimeout(function () {
-            if (donationClose) donationClose.focus();
-          }, 80);
-        }
-
-        function closeDonationPopup() {
-          donationModal.classList.remove("open");
-          donationModal.setAttribute("aria-hidden", "true");
-          document.body.classList.remove("donation-lock");
-        }
-
-        // Works with the user's existing header button and any future donate buttons.
-        document
-          .querySelectorAll(
-            ".nav-donate, .donate-btn, [data-donate], a[href='#donate']",
-          )
-          .forEach(function (trigger) {
-            trigger.addEventListener("click", openDonationPopup);
-          });
-
-        if (donationClose)
-          donationClose.addEventListener("click", closeDonationPopup);
-
-        const backdrop = donationModal.querySelector(".donation-backdrop");
-        if (backdrop) backdrop.addEventListener("click", closeDonationPopup);
-
-        document.addEventListener("keydown", function (event) {
-          if (
-            event.key === "Escape" &&
-            donationModal.classList.contains("open")
-          ) {
-            closeDonationPopup();
-          }
-        });
-
-        const copyButtons = document.querySelectorAll(".copy-btn");
-        let toastTimer;
-
-        function showCopyToast(message) {
-          if (!copyToast) return;
-          const textElement = copyToast.querySelector("span");
-          if (textElement) textElement.textContent = message;
-
-          copyToast.classList.add("show");
-          clearTimeout(toastTimer);
-          toastTimer = setTimeout(function () {
-            copyToast.classList.remove("show");
-          }, 1800);
-        }
-
-        async function copyText(text, button) {
-          try {
-            await navigator.clipboard.writeText(text);
-            markCopied(button);
-          } catch (error) {
-            const helper = document.createElement("textarea");
-            helper.value = text;
-            helper.style.position = "fixed";
-            helper.style.left = "-9999px";
-            document.body.appendChild(helper);
-            helper.select();
-
-            try {
-              document.execCommand("copy");
-              markCopied(button);
-            } catch (fallbackError) {
-              showCopyToast("Please copy manually");
-            }
-
-            document.body.removeChild(helper);
-          }
-        }
-
-        function markCopied(button) {
-          button.classList.add("copied");
-          button.innerHTML = '<i class="fa-solid fa-check"></i>';
-          showCopyToast("Copied successfully");
-
-          setTimeout(function () {
-            button.classList.remove("copied");
-            button.innerHTML = '<i class="fa-regular fa-copy"></i>';
-          }, 1500);
-        }
-
-        copyButtons.forEach(function (button) {
-          button.addEventListener("click", function () {
-            const value = this.getAttribute("data-copy");
-            if (value) copyText(value, this);
-          });
-        });
-
-        // Keep keyboard focus inside the modal while it is open.
-        document.addEventListener("keydown", function (event) {
-          if (event.key !== "Tab" || !donationModal.classList.contains("open"))
-            return;
-
-          const focusable = donationDialog.querySelectorAll(
-            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
-          );
-
-          if (!focusable.length) return;
-
-          const first = focusable[0];
-          const last = focusable[focusable.length - 1];
-
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
-        });
-
-        donationModal.setAttribute("aria-hidden", "true");
-      });
-    </script>
+    <script src="about.js"></script>
   </body>
 </html>
