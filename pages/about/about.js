@@ -653,7 +653,7 @@ function initDonationPopup() {
    (The main page has its own copy of these two values in script.js.)
 ========================================================= */
 
-const SPONSOR_FORM_ENDPOINT = "";
+const SPONSOR_FORM_ENDPOINT = "https://formsubmit.co/ajax/servinghumanitysh1@gmail.com";
 const PARTNER_EMAIL = "servinghumanitysh1@gmail.com";
 
 // Same project list the main page builds from IMPACT_STATS
@@ -681,21 +681,28 @@ function initSponsorPopup() {
 
   if (!sponsorModal || !sponsorTriggers.length) return;
 
+  let previousFocus = null;
+
   function openSponsorModal(event) {
     if (event) event.preventDefault();
-
+    previousFocus = document.activeElement;
     sponsorModal.classList.add("active");
     sponsorModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
     const dialog = sponsorModal.querySelector(".sponsor-dialog");
     if (dialog) dialog.scrollTop = 0;
+    window.setTimeout(function () {
+      if (sponsorClose) sponsorClose.focus();
+      else if (dialog) dialog.setAttribute("tabindex", "-1"), dialog.focus();
+    }, 0);
   }
 
   function closeSponsorModal() {
     sponsorModal.classList.remove("active");
     sponsorModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
+    if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus();
   }
 
   sponsorTriggers.forEach(function (trigger) {
@@ -708,8 +715,20 @@ function initSponsorPopup() {
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && sponsorModal.classList.contains("active")) {
+    if (!sponsorModal.classList.contains("active")) return;
+    if (event.key === "Escape") {
       closeSponsorModal();
+      return;
+    }
+    if (event.key === "Tab") {
+      const dialog = sponsorModal.querySelector(".sponsor-dialog");
+      if (!dialog) return;
+      const items = Array.from(dialog.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+        .filter(function (el) { return el.offsetParent !== null; });
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     }
   });
 
@@ -739,6 +758,7 @@ function initSponsorForm() {
   }
 
   function setStatus(message, type) {
+    if (!statusEl) return;
     statusEl.textContent = message;
     statusEl.classList.toggle("is-error", type === "error");
     statusEl.classList.toggle("is-success", type === "success");
@@ -820,7 +840,10 @@ function initSponsorForm() {
   async function sendToEndpoint(data) {
     const response = await fetch(SPONSOR_FORM_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
       body: JSON.stringify(data),
     });
     if (!response.ok) throw new Error("Request failed: " + response.status);
@@ -837,7 +860,7 @@ function initSponsorForm() {
     }
 
     const data = buildPayload();
-    submitBtn.disabled = true;
+    if (submitBtn) submitBtn.disabled = true;
     setStatus("Sending your request...", "");
 
     try {
@@ -863,7 +886,7 @@ function initSponsorForm() {
         "error",
       );
     } finally {
-      submitBtn.disabled = false;
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 }

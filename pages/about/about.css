@@ -67,7 +67,6 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  user-select: none;
   color: var(--ink);
   background: #ffffff;
   /* safety net: never allow sideways scroll (clip keeps sticky header working) */
@@ -3527,4 +3526,61 @@ body.donation-lock {
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
+}
+
+
+/* =========================================================
+   TEST PATCH: align shared header/footer with the main page
+   Keep page-specific paths and content untouched.
+========================================================= */
+.header-content {
+  position: relative;
+  z-index: 10001;
+  padding: 10px clamp(20px, 5vw, 75px);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.foundationLogo { width: clamp(150px, 18vw, 245px); }
+.contact-info {
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+.typing-content .typing-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0;
+  white-space: normal;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(.95rem, .8rem + 1vw, 1.1rem);
+  font-weight: 400;
+}
+.typing-content .text { width: auto; min-width: 0; max-width: 100%; }
+.footer { max-width: 100%; padding-top: clamp(44px, 6vw, 72px); }
+.footer-container { min-width: 0; }
+.footer .foundationFooterLogo { width: clamp(170px, 20vw, 230px); }
+.footer-col, .footer-col * { min-width: 0; }
+.footer-col p { overflow-wrap: anywhere; }
+
+/* Avoid narrow-screen overflow without changing the desktop design. */
+@media (max-width: 767px) {
+  .header-content { justify-content: center; }
+  .welfareLogo { justify-content: center; }
+  .contact-info { width: 100%; gap: 10px; }
+  .nav-donate, .nav-sponsor { min-height: 40px; padding-inline: 14px; }
+  .typing-content { padding: 9px 12px; }
+  .footer-container { width: min(92%, 560px); }
+}
+@media (max-width: 360px) {
+  .foundationLogo { width: min(72vw, 220px); }
+  .contact-info { gap: 8px; }
+  .nav-donate, .nav-sponsor { font-size: 14px; padding-inline: 11px; }
+  .typing-content .typing-heading { font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

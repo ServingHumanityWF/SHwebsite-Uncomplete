@@ -11,7 +11,6 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  user-select: none;
   color: #003c69;
   background: #ffffff;
   width: 100%;
@@ -243,7 +242,7 @@ img {
   z-index: 1000;
 }
 
-.typing-content h1 {
+.typing-content .typing-heading {
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -4043,7 +4042,7 @@ html {
 }
 
 /* 5. Bank details and sponsor text must be selectable so people can copy them.
-      body keeps user-select: none for the rest of the page. */
+      normal page text remains selectable. */
 
 .donation-dialog,
 .sponsor-dialog {
@@ -4125,7 +4124,7 @@ html {
 /* Top banner: the h1 had a 6.5rem right margin and nowrap, which pushed the
    centered text off the left edge of the screen on phones. */
 
-.typing-content h1 {
+.typing-content .typing-heading {
   margin-right: 0;
   white-space: normal;
   flex-wrap: wrap;
@@ -4857,7 +4856,7 @@ body {
     font-size: 14px;
     margin-left: 5px;
   }
-  .typing-content h1 {
+  .typing-content .typing-heading {
     font-size: 0.75rem;
   }
   .static,
@@ -5631,7 +5630,7 @@ body {
     height: auto;
     padding: 10px 12px;
   }
-  .typing-content h1 {
+  .typing-content .typing-heading {
     max-width: 100%;
     white-space: normal;
     flex-wrap: wrap;
@@ -5644,7 +5643,7 @@ body {
     padding: 0 10px;
     top: 0;
   }
-  .typing-content h1 {
+  .typing-content .typing-heading {
     font-size: 0.9rem;
   } */
   .section-container {
@@ -6016,7 +6015,7 @@ body {
     font-size: 15px;
     padding: 7px 12px;
   }
-  .typing-content h1 {
+  .typing-content .typing-heading {
     font-size: 1rem;
   }
   .static,

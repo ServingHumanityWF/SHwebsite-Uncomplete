@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document
-    .querySelectorAll(".projects-menu a, .nav-link:not(.projects-toggle), .nav-donate")
+    .querySelectorAll(".projects-menu a, .nav-link:not(.projects-toggle), .nav-donate, .nav-sponsor")
     .forEach((link) => {
       link.addEventListener("click", () => {
         nav.classList.remove("active");
@@ -358,14 +358,7 @@ const VOLUNTEERS = [
     role: "Marketing Representative",
     icon: "fa-user",
     text: "Marketing Representative, I want to say that Serving Humanity is doing an incredible job. They are making a real difference in people’s lives, and it’s inspiring to see the impact. The dedication and hard work of everyone involved are truly commendable. Keep up the fantastic work and know you’re making the world a better place. The compassion and teamwork I’ve witnessed here are unmatched. I’m genuinely proud to be part of this transformative journey.",
-  },
-  {
-    name: "Volunteer Name",
-    role: "Volunteer Role",
-    icon: "fa-user",
-    text: "Marketing Representative, I want to say that Serving Humanity is doing an incredible job. They are making a real difference in people’s lives, and it’s inspiring to see the impact. The dedication and hard work of everyone involved are truly commendable. Keep up the fantastic work and know you’re making the world a better place. The compassion and teamwork I’ve witnessed here are unmatched. I’m genuinely proud to be part of this transformative journey.",
-  }
-];
+  }];
 
 /* Cards per view and gap for each screen width (JavaScript controls the
    slider layout, not CSS). Checked in order, first match wins. */
@@ -597,6 +590,7 @@ const IMPACT_STATS = [
 /* Number of columns for each screen width (JavaScript controls this).
    Checked in order, first match wins. */
 const IMPACT_LAYOUT = [
+  { maxWidth: 480, columns: 1 },
   { maxWidth: 1024, columns: 2 },
   { maxWidth: Infinity, columns: 4 },
 ];
@@ -937,8 +931,8 @@ document.addEventListener("DOMContentLoaded", function () {
    are POSTed to it as JSON. Leave it empty to open an email to
    PARTNER_EMAIL instead.
    ===================================================================== */
-const SPONSOR_FORM_ENDPOINT = "";
-const PARTNER_EMAIL = "servinghumanitysh1@gmail.com";
+const SPONSOR_FORM_ENDPOINT = "https://formsubmit.co/ajax/servinghumanitywebsite@gmail.com";
+const PARTNER_EMAIL = "servinghumanitywebsite@gmail.com";
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("sponsorJoinForm");
@@ -1038,7 +1032,10 @@ document.addEventListener("DOMContentLoaded", function () {
   async function sendToEndpoint(data) {
     const response = await fetch(SPONSOR_FORM_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
       body: JSON.stringify(data),
     });
     if (!response.ok) throw new Error("Request failed: " + response.status);
