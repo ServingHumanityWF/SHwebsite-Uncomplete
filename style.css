@@ -143,7 +143,7 @@ img {
 
 .header-content {
   width: 100%;
-  min-height: 72px;
+  min-height: 65px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -237,6 +237,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  padding-left: 70px;
   background: linear-gradient(90deg, #0a7bdd, #06477f);
   position: relative;
   z-index: 1000;
@@ -336,7 +337,7 @@ img {
 
 .container-five {
   width: min(1300px, 94%);
-  min-height: 50px;
+  min-height: 46px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -2880,7 +2881,7 @@ img {
   font-size: 32px;
   box-shadow: 0 8px 20px rgba(5, 89, 23, 0.5);
   z-index: 9999;
-  animation: whatsappMove 0.8s ease-in-out infinite;
+  animation: whatsappMove 1.5s ease-in-out infinite;
   transition: transform 0.3s ease;
 }
 
@@ -2964,7 +2965,7 @@ img {
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #00a86b #eaf4f7;
+  scrollbar-color: #00a86b transparent;
 }
 
 body.donation-lock {
@@ -3015,36 +3016,36 @@ body.donation-lock {
   box-shadow: 0 35px 90px rgba(0, 0, 0, 0.3);
   transform: translateY(35px) scale(0.94);
   transition: transform 0.65s cubic-bezier(0.2, 0.75, 0.25, 1);
-  scrollbar-width: thin;
+  /* scrollbar-width: thin; */
   scrollbar-color: #00a86b transparent;
 }
 
-.donation-dialog::-webkit-scrollbar {
-  width: 10px;
-}
+/* .donation-dialog::-webkit-scrollbar {
+  width: 5px;
+} */
 
-.donation-dialog::-webkit-scrollbar-button {
+/* .donation-dialog::-webkit-scrollbar-button {
   display: none !important;
   width: 0 !important;
   height: 0 !important;
-}
+} */
 
-.donation-dialog::-webkit-scrollbar-track {
+/* .donation-dialog::-webkit-scrollbar-track {
   background: transparent;
-}
+} */
 
-.donation-dialog::-webkit-scrollbar-thumb {
+/* .donation-dialog::-webkit-scrollbar-thumb {
   background: #00a86b;
   border-radius: 999px;
   border: 1px solid transparent;
   background-clip: padding-box;
-}
+} */
 
-.donation-dialog::-webkit-scrollbar-thumb:hover {
+/* .donation-dialog::-webkit-scrollbar-thumb:hover {
   background: #078c75;
   border-radius: 999px;
   background-clip: padding-box;
-}
+} */
 
 .donation-modal.open .donation-dialog {
   transform: translateY(0) scale(1);
@@ -4856,12 +4857,16 @@ body {
     font-size: 14px;
     margin-left: 5px;
   }
-  .typing-content .typing-heading {
+  .typing-content {
+    font-size: 0.75rem;
+    justify-content: flex-start;
+  }
+  .typing-heading {
     font-size: 0.75rem;
   }
   .static,
   .text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .text {
     width: 120px;
@@ -4889,8 +4894,8 @@ body {
   .whatsapp-float {
     width: 50px;
     height: 50px;
-    right: 18px;
-    bottom: 18px;
+    right: 15px;
+    bottom: 80px;
     font-size: 27px;
   }
   .back-to-top {
@@ -5436,7 +5441,7 @@ body {
   }
   .static,
   .text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
   .text {
     width: 150px;
@@ -5804,7 +5809,8 @@ body {
 @media (max-width: 767px) {
   .header-content {
     justify-content: center;
-    padding-inline: 12px;
+    padding-top: 5px;
+    /* padding-inline: 12px; */
   }
   .contact-info {
     width: 100%;
@@ -5823,7 +5829,7 @@ body {
 @media (max-width: 767px) {
   .static,
   .text {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -6086,7 +6092,6 @@ body {
   }
 }
 
-
 /* ==========================================================================
    PROJECT PAGES LOCK POPUP
    ========================================================================== */
@@ -6101,7 +6106,9 @@ body {
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 
 .lock-modal.is-open {
@@ -6202,7 +6209,9 @@ body {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .lock-ok:hover {
@@ -6216,5 +6225,919 @@ body {
   }
   .lock-dialog h2 {
     font-size: 24px;
+  }
+}
+
+/* ==========================================================================
+   ZAKAT CALCULATOR
+   A button (bottom-left) opens a card on laptops and a bottom sheet on phones.
+   ========================================================================== */
+
+/* ---------- the button ---------- */
+/* Gold on purpose: the page is blue, green and white, so a warm gold button
+   is the one thing on the screen that stands out. */
+
+.zakat-fab {
+  position: fixed;
+  left: 25px;
+  bottom: 25px;
+  z-index: 9000;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 62px;
+  padding: 0 28px 0 22px;
+  border: 0;
+  border-radius: 999px;
+  color: #032f59;
+  background: linear-gradient(135deg, #ffd23f 0%, #ff9f1c 100%);
+  box-shadow:
+    0 0 0 3px #ffffff,
+    0 12px 30px rgba(255, 159, 28, 0.5),
+    0 4px 14px rgba(3, 47, 89, 0.3);
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+    animation: zoomEffect 1.5s ease-in-out infinite;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zakat-fab i {
+  font-size: 26px;
+}
+
+/* a ring that pulses a few times when the page opens, then stops by itself */
+.zakat-fab::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid #ff9f1c;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+  animation: zakatRing 2.4s ease-out 1.2s 5;
+}
+
+@keyframes zakatRing {
+  0% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.14, 1.5);
+  }
+}
+
+.zakat-fab:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 3px #ffffff,
+    0 16px 36px rgba(255, 159, 28, 0.6),
+    0 6px 18px rgba(3, 47, 89, 0.35);
+}
+
+.zakat-fab:focus-visible {
+  outline: 3px solid #032f59;
+  outline-offset: 5px;
+}
+
+.zakat-fab-short {
+  display: none;
+}
+
+/* ---------- overlay + card ---------- */
+
+body.zakat-open {
+  overflow: hidden;
+}
+
+.zakat-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 25px 106px;
+}
+
+.zakat-overlay[hidden] {
+  display: none;
+}
+
+.zakat-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 47, 89, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.zakat-panel {
+  position: relative;
+  width: min(530px, 100%);
+  max-height: min(740px, calc(100vh - 120px));
+  /* max-height: min(740px, calc(100dvh - 120px)); */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 30px 70px rgba(3, 47, 89, 0.38);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #003c69;
+  user-select: text;
+  -webkit-user-select: text;
+  outline: none;
+  animation: zakatPanelIn 0.28s ease-out;
+}
+
+@keyframes zakatPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- header of the card ---------- */
+
+.zakat-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 18px 16px 20px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #032f59 0%, #06477f 60%, #075b78 100%);
+}
+
+.zakat-head-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #72edc0;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 19px;
+}
+
+.zakat-head-text {
+  min-width: 0;
+}
+
+.zakat-head h2 {
+  margin: 0;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.zakat-head p {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.zakat-close {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  margin-inline-start: auto;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.zakat-close:hover {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+/* ---------- body of the card ---------- */
+
+.zakat-body {
+  padding: 18px 20px 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.zakat-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #eef5f8;
+}
+
+.zakat-tabs button {
+  min-height: 40px;
+  border: 0;
+  border-radius: 9px;
+  color: #4a6677;
+  background: transparent;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.zakat-tabs button[aria-selected="true"] {
+  color: #06477f;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(6, 71, 127, 0.12);
+}
+
+/* fields */
+
+.zakat-field {
+  margin-bottom: 14px;
+}
+
+.zakat-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #06477f;
+}
+
+.zakat-field small {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #6b7e8d;
+}
+
+.zakat-field small:empty {
+  display: none;
+}
+
+.zakat-input {
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  border: 1.5px solid #d6e3ea;
+  border-radius: 12px;
+  background: #f9fbfc;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.zakat-input:focus-within {
+  border-color: #00a86b;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.14);
+}
+
+.zakat-input > span {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  color: #06477f;
+  background: #eef5f8;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* 16px so iPhones do not zoom in when the field is tapped */
+.zakat-input input {
+  flex: 1;
+  min-width: 0;
+  height: 48px;
+  padding: 0 12px;
+  border: 0;
+  outline: none;
+  color: #003c69;
+  background: transparent;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.zakat-input input::placeholder {
+  color: #a8b6c0;
+  font-weight: 400;
+}
+
+.zakat-input select {
+  height: 48px;
+  padding: 0 10px;
+  border: 0;
+  border-left: 1px solid #d6e3ea;
+  outline: none;
+  color: #06477f;
+  background: #eef5f8;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ---------- result ---------- */
+
+.zakat-result-card {
+  margin-top: 4px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid rgba(0, 168, 107, 0.22);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f1fbf6 0%, #eaf6fb 100%);
+}
+
+.zakat-result-label {
+  display: block;
+  color: #00875a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.zakat-result {
+  display: block;
+  margin: 4px 0 6px;
+  color: #06477f;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: clamp(32px, 8vw, 42px);
+  font-weight: 800;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.zakat-status {
+  margin: 0;
+  color: #35566e;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.zakat-status.is-below {
+  color: #9a5b00;
+}
+
+.zakat-status.is-nudge {
+  animation: zakatNudge 0.4s ease;
+}
+
+@keyframes zakatNudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+.zakat-breakdown {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(6, 71, 127, 0.22);
+  font-size: 13px;
+  text-align: start;
+}
+
+.zakat-breakdown[hidden] {
+  display: none;
+}
+
+.zakat-breakdown dt {
+  color: #5f7584;
+}
+
+.zakat-breakdown dd {
+  margin: 0;
+  color: #06477f;
+  font-weight: 800;
+  text-align: end;
+}
+
+/* ---------- notes and buttons ---------- */
+
+.zakat-note {
+  margin: 14px 0 0;
+  color: #5f7584;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.zakat-note strong {
+  color: #06477f;
+}
+
+.zakat-note:empty {
+  display: none;
+}
+
+.zakat-note.is-stale {
+  color: #9a5b00;
+}
+
+.zakat-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.zakat-donate-btn {
+  flex: 1;
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #00a86b 0%, #06477f 100%);
+  box-shadow: 0 10px 22px rgba(6, 71, 127, 0.22);
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.zakat-donate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(6, 71, 127, 0.3);
+}
+
+/* clearly "off" until there is a Zakat amount to donate */
+.zakat-donate-btn[aria-disabled="true"] {
+  color: #8a9ba6;
+  background: #e3ebef;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.zakat-reset {
+  min-height: 50px;
+  padding: 0 18px;
+  border: 1.5px solid #d6e3ea;
+  border-radius: 12px;
+  color: #06477f;
+  background: #ffffff;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.zakat-reset:hover {
+  background: #eef5f8;
+}
+
+.zakat-donate-btn:focus-visible,
+.zakat-reset:focus-visible,
+.zakat-close:focus-visible,
+.zakat-tabs button:focus-visible {
+  outline: 3px solid #00a86b;
+  outline-offset: 2px;
+}
+
+.zakat-privacy {
+  margin: 12px 0 0;
+  color: #7d8f9b;
+  font-size: 12px;
+  text-align: center;
+}
+
+.zakat-privacy i {
+  margin-right: 4px;
+  color: #00a86b;
+}
+
+/* ---------- Donate popup in "Zakat only" mode ---------- */
+
+.donation-modal.zakat-only-mode .donation-method:first-child {
+  display: none;
+}
+
+.donation-modal.zakat-only-mode .donation-dialog {
+  width: min(620px, 100%);
+}
+
+.zakat-modal-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  margin: 12px 0 0;
+  padding: 10px 13px;
+  border-radius: 10px;
+  color: #087b43;
+  background: #e9f8ef;
+}
+
+.zakat-modal-summary[hidden] {
+  display: none;
+}
+
+#zakat-modal-text {
+  flex: 1 1 220px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.zakat-copy-amount {
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid #00a86b;
+  border-radius: 999px;
+  color: #087b43;
+  background: #ffffff;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.zakat-copy-amount:hover {
+  color: #ffffff;
+  background: #00a86b;
+}
+
+/* ---------- English / Urdu ---------- */
+
+.zakat-lang {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.zakat-lang-inner {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: 999px;
+  background: #eef5f8;
+}
+
+.zakat-lang-btn {
+  min-height: 34px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #4a6677;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.zakat-lang-btn[aria-pressed="true"] {
+  color: #06477f;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(6, 71, 127, 0.14);
+}
+
+.zakat-lang-btn:focus-visible {
+  outline: 3px solid #00a86b;
+  outline-offset: 2px;
+}
+
+.zakat-lang-btn[lang="ur"] {
+  font-family:
+    "Roboto Condensed", "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq",
+    "Noto Naskh Arabic", "Segoe UI", Tahoma, serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* Urdu text: right to left, an Urdu font, and more line height (Urdu
+   letters are taller than English ones). The numbers stay 0-9. */
+
+.zakat-panel[lang="ur"],
+.zakat-panel[lang="ur"]
+  :is(
+    h2,
+    p,
+    small,
+    label,
+    button,
+    output,
+    dt,
+    dd,
+    span,
+    strong,
+    select,
+    option,
+    input
+  ) {
+  font-family:
+    "Roboto Condensed", "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq",
+    "Noto Naskh Arabic", "Segoe UI", Tahoma, serif;
+}
+
+.zakat-panel[lang="ur"] h2 {
+  font-size: 21px;
+  line-height: 1.9;
+}
+
+.zakat-panel[lang="ur"] .zakat-head p {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.zakat-panel[lang="ur"] .zakat-field label {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.zakat-panel[lang="ur"] .zakat-field small {
+  font-size: 13.5px;
+  line-height: 2;
+}
+
+.zakat-panel[lang="ur"] .zakat-status {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.zakat-panel[lang="ur"] .zakat-note {
+  font-size: 14px;
+  line-height: 2.1;
+}
+
+.zakat-panel[lang="ur"] .zakat-breakdown {
+  font-size: 14px;
+  line-height: 2;
+}
+
+.zakat-panel[lang="ur"] .zakat-result-label {
+  letter-spacing: 0;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.zakat-panel[lang="ur"] .zakat-tabs button,
+.zakat-panel[lang="ur"] .zakat-donate-btn,
+.zakat-panel[lang="ur"] .zakat-reset {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.zakat-panel[lang="ur"] .zakat-privacy {
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* the money fields stay left-to-right: "PKR | 500,000" */
+.zakat-panel[dir="rtl"] .zakat-input {
+  direction: ltr;
+}
+
+.zakat-panel[dir="rtl"] .zakat-input input {
+  text-align: left;
+}
+
+/* the same Urdu look for the Zakat line inside the Donate popup */
+#zakat-modal-text[lang="ur"],
+.zakat-copy-amount[lang="ur"] {
+  font-family:
+    "Roboto Condensed", "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq",
+    "Noto Naskh Arabic", "Segoe UI", Tahoma, serif;
+  line-height: 2;
+}
+
+#zakat-modal-text[lang="ur"] {
+  font-size: 15px;
+}
+
+/* ---------- screen sizes ---------- */
+
+/* phones: the card becomes a bottom sheet */
+@media (max-width: 640px) {
+  .zakat-overlay {
+    padding: 0;
+  }
+
+  .zakat-panel {
+    width: 100%;
+    max-height: 92vh;
+    max-height: 92dvh;
+    border-radius: 22px 22px 0 0;
+    animation-name: zakatSheetIn;
+  }
+
+  .zakat-head {
+    padding: 16px 14px 14px 16px;
+  }
+
+  .zakat-body {
+    padding: 16px 16px 22px;
+  }
+}
+
+@keyframes zakatSheetIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .zakat-fab {
+    left: 20px;
+    bottom: 80px;
+    min-height: 58px;
+    gap: 10px;
+    padding: 0 24px 0 18px;
+    font-size: 17px;
+  }
+
+  .zakat-fab i {
+    font-size: 24px;
+  }
+
+  .zakat-actions {
+    flex-direction: column-reverse;
+  }
+
+  .zakat-reset {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 360px) {
+  .zakat-fab {
+    min-height: 56px;
+    padding: 0 20px 0 16px;
+  }
+
+  .zakat-fab-long {
+    display: none;
+  }
+
+  .zakat-fab-short {
+    display: inline;
+  }
+
+  .zakat-head h2 {
+    font-size: 20px;
+  }
+
+  .zakat-head p {
+    font-size: 12px;
+  }
+
+  .zakat-body {
+    padding: 14px 13px 20px;
+  }
+}
+
+/* short landscape phones: keep the card inside the screen */
+@media (max-height: 520px) {
+  .zakat-panel {
+    max-height: calc(100vh - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .zakat-overlay {
+    padding-bottom: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zakat-panel,
+  .zakat-status.is-nudge,
+  .zakat-fab::after {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   MENU BUTTON (phones and tablets)  -  lines icon only
+   ---------------------------------------------------------
+   The button lives in the blue typing bar (see the header in
+   index.html). It has no white box and the empty white menu bar
+   under the header is gone: on phones and tablets the menu is only
+   the slide-in drawer. Desktop (1025px and up) is not changed.
+========================================================= */
+
+@media (max-width: 1024px) {
+  .typing-content {
+    position: relative;
+    min-height: 45px;
+    padding-left: 15px;
+    padding-right: 40px;
+    align-items: center;
+  }
+
+  .typing-content .menu-toggle {
+    position: absolute !important;
+    top: 50% !important;
+    right: 8px !important;
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+    font-size: 26px !important;
+    line-height: 1 !important;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .typing-content .menu-toggle:hover {
+    opacity: 0.85;
+  }
+
+  .typing-content .menu-toggle:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  /* while the drawer is open the button is not needed */
+  .typing-content .menu-toggle[aria-expanded="true"] {
+    visibility: hidden;
+  }
+
+  /* the old menu bar had nothing left in it: remove the white strip */
+  .main-header {
+    height: 0;
+    min-height: 0;
+    border-bottom: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .main-header .container-five {
+    height: 0;
+    min-height: 0;
   }
 }
