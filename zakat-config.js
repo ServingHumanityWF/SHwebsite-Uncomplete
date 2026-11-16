@@ -29,9 +29,9 @@
 ========================================================= */
 
 window.ZAKAT_CONFIG = {
-  updated: "2026-11-14",
+  updated: "2026-11-16",
 
-  goldPerGram: 35231.1, // PKR per gram of 24K gold  (410,936 / 11.664)
+  goldPerGram: 35231, // PKR per gram of 24K gold  (410,936 / 11.664)
   silverPerGram: 458.076132, // PKR per gram of silver  (5,343 / 11.664)
 
   // "silver" (recommended for cash and mixed wealth, and the common choice in
